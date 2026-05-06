@@ -118,7 +118,7 @@ npm start
 **Saif Ullah**
 
 * GitHub: [https://github.com/saifullah857/](https://github.com/saifullah857/)
-* LinkedIn: [https://www.linkedin.com/in/saifullah857/](https://www.linkedin.com/in/saifullah857/)
+* LinkedIn: [https://www.linkedin.com/in/saif-ullah-khalid-412221379/](https://www.linkedin.com/in/saif-ullah-khalid-412221379/)
 
 ---
 
