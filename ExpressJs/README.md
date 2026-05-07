@@ -1,9 +1,8 @@
 <div align="center">
 
-<!-- Animated Header -->
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=30&pause=1000&color=00D4FF&center=true&vCenter=true&width=600&lines=🚀+ExpressJS+Basics;Routing+%7C+EJS+Templates+%7C+Dynamic+Pages;From+Zero+to+First+Express+Server!" alt="Typing SVG" />
 
-<br/>
+
+
 
 <!-- Badges Row 1 -->
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
@@ -94,7 +93,7 @@ npm -v
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/saifullah857/<repo-name>.git
+git clone https://github.com/saifullah857/ExpressJS-Full-Stack-Practice-Projects
 
 # 2. Navigate to this module
 cd ExpressJs
