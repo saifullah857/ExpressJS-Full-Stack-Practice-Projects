@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= data.name %> | Profile</title>
+
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+        width: 100%;
+      text-align: center;
+      padding: 2rem 1rem;
+      background: linear-gradient(135deg, #ff7b54, #ffb26b);
+      color: #fff;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header span {
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .buttons {
+      margin-top: 1rem;
+    }
+
+    .buttons button {
+      background: #fff;
+      color: #ff7b54;
+      border: none;
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 30px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .buttons button:hover {
+      background: #ffb26b;
+      color: #fff;
+      transform: scale(1.05);
+    }
+
+    .stats {
+      margin: 1rem auto;
+      text-align: center;
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    hr {
+      width: 60%;
+      margin: 1rem auto;
+      border: 0;
+      height: 2px;
+      background: #ffb26b;
+    }
+
+    /* Image Grid */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 25px;
+      padding: 2rem;
+      justify-items: center;
+    }
+
+    .card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px #ffb26b;
+      transition: transform 0.3s ease;
+      background: #fff;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 15px;
+    }
+
+    /* Overlay */
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      border-radius: 15px;
+      color: #fff;
+      font-weight: 500;
+      font-size: 1.1rem;
+    }
+
+    .card:hover .overlay {
+      opacity: 1;
+    }
+
+    .overlay span {
+      margin: 5px 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #ff7b54;
+      color: #fff;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      text-align: center;
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>This page belongs to @<span><%= data.name %></span></h1>
+    <div class="buttons">
+      <button>Message</button>
+      <button>Follow</button>
+    </div>
+  </header>
+
+  <div class="stats">
+    <p>
+      <b>Followers:</b> <%= data.followers %> &nbsp;&nbsp; | &nbsp;&nbsp;
+      <b>Following:</b> <%= data.following %>
+    </p>
+  </div>
+
+  <hr />
+
+  <!-- Gallery -->
+  <section class="gallery">
+    <% for (const post of data.posts) { %>
+    <div class="card">
+      <img src="<%= post.image %>" alt="Post image" />
+      <div class="overlay">
+        <span>❤️ <%= post.likes %></span>
+        <span>💬 <%= post.comments %></span>
+      </div>
+    </div>
+    <% } %>
+  </section>
+
+  <footer>
+    &copy; 2025 <%= data.name %> | All rights reserved.
+  </footer>
+</body>
+</html>
