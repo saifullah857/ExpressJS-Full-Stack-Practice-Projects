@@ -2,7 +2,7 @@
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,20,24&height=180&section=header&text=ExpressJs%20Class%20Two&fontSize=45&fontColor=fff&animation=twinkling&fontAlignY=38&desc=GET%20vs%20POST%20%7C%20Query%20Params%20%7C%20JS%20OOP&descAlignY=58&descSize=18" width="100%"/>
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=20&duration=2800&pause=900&color=F7A800&center=true&vCenter=true&width=700&height=45&lines=📡+GET+vs+POST+—+Know+the+Difference;🔍+Query+Params+vs+Request+Body;🧱+JavaScript+OOP%3A+Classes+%26+Inheritance;⚙️+Express+Middleware%3A+urlencoded+%26+json" alt="Typing SVG" />
+
 
 <br/>
 
