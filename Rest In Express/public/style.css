@@ -1,0 +1,25 @@
+h1{
+    color: maroon;
+}
+div{
+background-color: lightpink;
+}
+.user{
+    font-style: italic;
+}
+form{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 2px 3px 4px gray;
+    background-color: lightgoldenrodyellow;
+    padding: 20px;
+    text-align: center;
+}
+form input{
+    margin-bottom: 10px;
+}
+form button{
+    margin-top: 10px;
+}
