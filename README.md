@@ -2,7 +2,7 @@
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=200&section=header&text=ExpressJS%20Full%20Stack&fontSize=50&fontColor=fff&animation=twinkling&fontAlignY=35&desc=Practice%20Projects&descAlignY=55&descSize=22" width="100%"/>
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=22&duration=3000&pause=800&color=00D4FF&center=true&vCenter=true&multiline=false&width=700&height=50&lines=🚀+From+Basics+→+Real-World+Full-Stack+Apps;🌐+Building+with+Express.js+%7C+MongoDB+%7C+EJS;🔐+Auth+%7C+REST+APIs+%7C+File+Uploads;🏆+Featured%3A+Wanderlust+(Airbnb+Clone)" alt="Typing SVG" />
+
 
 <br/>
 
