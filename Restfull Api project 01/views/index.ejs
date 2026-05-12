@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Students</title>
+
+  <!-- ✅ Bootstrap 5 -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <!-- ✅ Google Font -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    body {
+      background: linear-gradient(90deg, #E3D6C8, #EAC755);
+      min-height: 100vh;
+      font-family: "Poppins", sans-serif;
+      padding: 40px;
+      color: #f1f5f9;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 50px;
+      color: #0f172a;
+      font-weight: 700;
+    }
+
+    .card {
+      border: none;
+      border-radius: 15px;
+      background-color: #0f172a;
+      color: #f1f5f9;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.35);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      overflow: hidden;
+      animation: fadeIn 0.8s ease forwards;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
+    }
+
+    .student-img {
+      height: 220px;
+      object-fit: cover;
+      width: 100%;
+      border-bottom: 3px solid #2563eb;
+    }
+
+    .student-info {
+      text-align: center;
+      padding: 18px;
+    }
+
+    .student-header {
+      display: flex;
+      justify-content: space-around;
+      font-weight: 500;
+      color: #e2e8f0;
+      font-size: 1rem;
+    }
+
+    .department {
+      background: linear-gradient(90deg, #E3D6C8, #EAC755);
+      color: #0f172a;
+      padding: 8px 12px;
+      border-radius: 10px;
+      margin: 10px auto;
+      font-size: 0.95rem;
+      display: inline-block;
+    }
+
+    /* 🔹 Action Buttons */
+    .actions {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .actions a,
+    .actions form button {
+      text-decoration: none;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 14px;
+      font-weight: 500;
+      color: #fff;
+      background-color: #2563eb;
+      transition: all 0.3s ease;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+
+    .actions a:hover,
+    .actions form button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 15px rgba(37, 99, 235, 0.5);
+    }
+
+    .actions .edit {
+      background-color: #22c55e;
+    }
+
+    .actions .delete {
+      background-color: #ef4444;
+    }
+
+    footer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 60px;
+    }
+
+    footer div button {
+      padding: 15px 25px;
+      background: linear-gradient(90deg, #e3d6c8, #eac755);
+      color: #0f172a;
+      border-radius: 15px;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 2px 3px 4px black;
+    }
+
+    footer div button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 15px black;
+    }
+
+    footer div button a {
+      text-decoration: none;
+      color: #0f172a;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>🎓 Student Profiles</h1>
+
+    <div class="row g-4">
+      <% for (const singleStudent of students) { %>
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100">
+          <img
+            src="<%= singleStudent.image %>"
+            alt="<%= singleStudent.name %>"
+            class="student-img"
+          />
+          <div class="student-info">
+            <div class="student-header">
+              <span><%= singleStudent.name %></span>
+              <span>Sem: <%= singleStudent.semester %></span>
+              <span>CGPA: <%= singleStudent.cgpa %></span>
+            </div>
+
+            <div class="department mt-3">
+              <%= singleStudent.department %>
+            </div>
+
+            <!-- ✅ Action Buttons -->
+            <div class="actions">
+              <a href="/students/<%= singleStudent.id %>" class="view">View</a>
+              <a href="/students/<%= singleStudent.id %>/edit" class="edit">Edit</a>
+              <form
+                action="/students/<%= singleStudent.id %>?_method=DELETE"
+                method="POST"
+                style="display:inline"
+              >
+                <button type="submit" class="delete">Delete</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% } %>
+    </div>
+  </div>
+
+  <footer>
+    <div>
+      <button>
+        <a href="/students/new">➕ Add New Student</a>
+      </button>
+    </div>
+  </footer>
+
+  <!-- ✅ Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
