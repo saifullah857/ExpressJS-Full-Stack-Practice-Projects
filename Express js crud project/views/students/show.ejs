@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Details</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="min-h-screen bg-gray-100">
+
+    <!-- NAVBAR -->
+    <nav class="flex items-center justify-between px-10 py-4 bg-white shadow-xl fixed top-0 left-0 w-full z-50">
+        <img class="w-16 h-16 object-contain scale-x-[-1]" 
+             src="https://static.vecteezy.com/system/resources/previews/042/633/833/non_2x/mindful-masculinity-dynamic-black-symbol-for-male-student-achievement-in-logo-design-educational-edge-black-logo-design-for-ambitious-male-students-vector.jpg" 
+             alt="Logo">
+
+        <div class="flex items-center gap-6 text-xl font-semibold text-teal-700  px-4">
+            <a href="/students" class="hover:text-teal-900">Home</a>
+            <a href="/students" class="hover:text-teal-900">All Students</a>
+            <a href="/students/create" class="hover:text-teal-900">Add Student</a>
+        </div>
+        <div class="flex items-center shadow-2xl shadow-teal-900 bg-transparent rounded-full">
+            <input class="outline-none px-3 py-2 text-lg bg-teal-300 rounded-l-full" type="text" name="" id="" placeholder="Search">
+            <button class="bg-teal-800 text-white px-3 py-2 rounded-r-full text-lg">Search</button>
+        </div>
+    </nav>
+
+    <!-- PAGE CONTENT -->
+    <div class="flex flex-col items-center w-full px-4 mt-32 mb-10">
+
+        <h1 class="text-3xl font-bold text-orange-600 drop-shadow mb-6">Student Details</h1>
+
+        <div class="bg-white rounded-3xl shadow-2xl p-7 w-full max-w-4xl flex gap-6">
+
+            <!-- LEFT SECTION -->
+            <div class="w-1/3 flex flex-col items-center text-center">
+                <img src="<%= student.image %>" 
+                     class="w-40 h-40 rounded-xl object-cover shadow-lg" 
+                     alt="Student Image">
+
+                <h2 class="text-xl font-semibold mt-3 text-gray-800">
+                    <%= student.name %>
+                </h2>
+            </div>
+
+            <!-- RIGHT SECTION -->
+            <div class="w-2/3">
+
+                <h1 class="text-2xl font-bold text-gray-900 mb-2">
+                    <%= student.collegeName %>
+                </h1>
+
+                <p class="text-gray-600 text-lg mb-3">
+                    <%= student.description %>
+                </p>
+
+                <div class="text-gray-700 space-y-1">
+                    <p><strong class="text-lg">Department:</strong> <%= student.department %></p>
+
+                    <div class="flex gap-6 text-lg">
+                        <p><strong>Semester:</strong> <%= student.semester %></p>
+                        <p><strong>CGPA:</strong> <%= student.cgpa %></p>
+                    </div>
+
+                    <p><strong>Location:</strong> <%= student.location %></p>
+                </div>
+
+                <!-- BUTTONS -->
+                <div class="flex gap-4 mt-7">
+                    <a href="/students/<%= student._id %>/edit"
+                       class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-full shadow-lg transition">
+                        Edit
+                    </a>
+
+                    <form method="POST" action="/students/<%= student._id %>?_method=DELETE">
+                        <button 
+                            class="bg-red-600 hover:bg-red-700 text-white px-6 py-2.5 rounded-full shadow-lg transition">
+                            Delete
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit page</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="min-h-screen bg-gray-100 flex items-center justify-center p-6">
+
+    <!-- FIXED NAVBAR -->
+    <nav class="fixed top-0 left-0 w-full flex items-center justify-between 
+                px-10 py-4 bg-white shadow-xl z-50">
+
+        <img class="w-16 h-16 object-contain scale-x-[-1]"
+             src="https://static.vecteezy.com/system/resources/previews/042/633/833/non_2x/mindful-masculinity-dynamic-black-symbol-for-male-student-achievement-in-logo-design-educational-edge-black-logo-design-for-ambitious-male-students-vector.jpg"
+             alt="">
+
+        <div class="flex items-center gap-6 text-xl font-semibold text-teal-700 px-4">
+            <a href="/students">Home</a>
+            <a href="/students">All Students</a>
+            <a href="/students/create">Add Student</a>
+        </div>
+        <div class="flex items-center shadow-2xl shadow-teal-900 bg-transparent rounded-full">
+            <input class="outline-none px-3 py-2 text-lg bg-teal-300 rounded-l-full" type="text" name="" id="" placeholder="Search">
+            <button class="bg-teal-800 text-white px-3 py-2 rounded-r-full text-lg">Search</button>
+        </div>
+    </nav>
+
+    <!-- FORM CONTAINER -->
+    <div class="pt-32 w-full max-w-xl bg-white shadow-2xl rounded-2xl p-8 border border-white/30">
+
+        <h1 class="text-3xl font-bold text-center text-sky-900 drop-shadow mb-6">
+            Update Student Information
+        </h1>
+
+        <form action="/students/<%= student._id %>?_method=PUT" 
+              method="POST" 
+              class="flex flex-col gap-3">
+
+            <!-- Name -->
+            <div>
+                <label class="text-sky-300 font-semibold">Student Name</label>
+                <input name="student[name]"
+                       value="<%= student.name %>"
+                       class="w-full px-3 py-2 mt-1 bg-sky-200 rounded-lg shadow-xl
+                              focus:ring-2 focus:ring-teal-500 outline-none"
+                       type="text" required>
+            </div>
+
+            <!-- Department -->
+            <div>
+                <label class="text-sky-300 font-semibold">Department</label>
+                <input name="student[department]"
+                       value="<%= student.department %>"
+                       class="w-full px-3 py-2 mt-1 bg-sky-200 rounded-lg shadow-xl
+                              focus:ring-2 focus:ring-teal-500 outline-none"
+                       type="text" required>
+            </div>
+
+            <!-- Description -->
+            <div>
+                <label class="text-sky-300 font-semibold">Description</label>
+                <textarea name="student[description]"
+                          rows="4"
+                          class="w-full px-3 py-2 mt-1 bg-sky-200 rounded-lg shadow-xl 
+                                 focus:ring-2 focus:ring-teal-500 outline-none"><%= student.description %></textarea>
+            </div>
+
+            <!-- Semester -->
+            <div>
+                <label class="text-sky-300 font-semibold">Semester</label>
+                <input name="student[semester]"
+                       value="<%= student.semester %>"
+                       type="number" min="1" max="8"
+                       class="w-full px-3 py-2 mt-1 bg-sky-200 rounded-lg shadow-xl
+                              focus:ring-2 focus:ring-teal-500 outline-none"
+                       required>
+            </div>
+
+            <!-- Image URL -->
+            <div>
+                <label class="text-sky-300 font-semibold">Image URL</label>
+                <input name="student[image]"
+                       value="<%= student.image %>"
+                       class="w-full px-3 py-2 mt-1 bg-sky-200 rounded-lg shadow-xl
+                              focus:ring-2 focus:ring-teal-500 outline-none"
+                       type="text">
+            </div>
+
+            <!-- CGPA -->
+            <div>
+                <label class="text-sky-300 font-semibold">CGPA</label>
+                <input name="student[cgpa]"
+                       value="<%= student.cgpa %>"
+                       type="number" step="0.01" min="0" max="4"
+                       class="w-full px-3 py-2 mt-1 bg-sky-200 rounded-lg shadow-xl
+                              focus:ring-2 focus:ring-teal-500 outline-none"
+                       required>
+            </div>
+
+            <!-- College Name -->
+            <div>
+                <label class="text-sky-300 font-semibold">College Name</label>
+                <input name="student[collegeName]"
+                       value="<%= student.collegeName %>"
+                       class="w-full px-3 py-2 mt-1 bg-sky-200 rounded-lg shadow-xl
+                              focus:ring-2 focus:ring-teal-500 outline-none"
+                       type="text" required>
+            </div>
+
+            <!-- Address -->
+            <div>
+                <label class="text-sky-300 font-semibold">Address</label>
+                <input name="student[location]"
+                       value="<%= student.location %>"
+                       class="w-full px-3 py-2 mt-1 bg-sky-200 rounded-lg shadow-xl
+                              focus:ring-2 focus:ring-teal-500 outline-none"
+                       type="text" required>
+            </div>
+
+            <!-- Submit -->
+            <button class="mt-4 bg-teal-700 text-white py-2 rounded-xl text-lg font-semibold 
+                           hover:bg-teal-800 hover:shadow-lg transition duration-200">
+                Update Student
+            </button>
+
+        </form>
+
+    </div>
+
+</body>
+</html>
